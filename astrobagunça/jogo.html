@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Astrobagunça — Missão</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page">
+
+  <canvas id="starfield" class="bg-canvas" aria-hidden></canvas>
+  <div class="bg-gradient"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <svg viewBox="0 0 64 64" class="logo" aria-hidden>
+        <defs><linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#FFB86B"/><stop offset="1" stop-color="#FF7BC6"/></linearGradient></defs>
+        <path d="M12 44c0 0 6-16 18-28 12-12 28-18 28-18s-6 16-18 28C30 44 12 44 12 44z" fill="url(#g2)"/>
+      </svg>
+      <div class="brand-text">
+        <div class="brand-title">Astrobagunça</div>
+        <div class="brand-sub">Missão: organizar a nave</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="index.html" class="nav-link">Início</a>
+      <a href="jogo.html" class="nav-link active">Jogo</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="game-hud">
+      <div class="hud-chip">⏳ <span id="time">45</span>s</div>
+      <div class="hud-chip">⭐ <span id="points">0</span></div>
+      <div class="energy-wrap">⚡ Energia
+        <div class="energy">
+          <div id="energy-bar" style="width:0%"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="stage" class="stage" aria-label="Área do jogo">
+      <!-- ship (SVG decorative) -->
+      <svg class="ship" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden>
+        <ellipse cx="50" cy="32" rx="48" ry="10" fill="#ffffff" opacity="0.06"></ellipse>
+      </svg>
+
+      <!-- targets will be injected here -->
+    </section>
+
+    <section class="tray" id="tray" aria-label="Itens">
+      <!-- items injected by JS -->
+    </section>
+
+    <div id="popup" class="popup hidden" role="dialog" aria-modal="true">
+      <h2 id="popup-title">Missão Completa!</h2>
+      <p id="popup-text">A nave está pronta para decolar!</p>
+      <div class="popup-actions">
+        <button id="btn-restart" class="btn-action">Jogar Novamente</button>
+        <a href="index.html" class="btn-link">Voltar</a>
+      </div>
+    </div>
+  </main>
+
+<script src="starfield.js"></script>
+<script src="jogo.js"></script>
+</body>
+</html>

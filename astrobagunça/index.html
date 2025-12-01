@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Astrobagunça — Página Inicial (Infantil)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page">
+
+  <canvas id="starfield" class="bg-canvas" aria-hidden></canvas>
+  <div class="bg-gradient"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <svg viewBox="0 0 64 64" class="logo" aria-hidden>
+        <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#FFB86B"/><stop offset="1" stop-color="#FF7BC6"/></linearGradient></defs>
+        <path d="M12 44c0 0 6-16 18-28 12-12 28-18 28-18s-6 16-18 28C30 44 12 44 12 44z" fill="url(#g1)"/>
+      </svg>
+      <div class="brand-text">
+        <div class="brand-title">Astrobagunça</div>
+        <div class="brand-sub">Brincar & organizar</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="index.html" class="nav-link active">Início</a>
+      <a href="jogo.html" class="nav-link">Jogar</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <h1 class="hero-title">Transforme arrumar em uma aventura!</h1>
+        <p class="hero-lead">
+          Embarque na <strong>Missão Astrobagunça</strong>: a nave ficou cheia de coisas espalhadas e precisa da sua ajuda!
+          O jogo ensina organização, responsabilidade e foco usando cores, sons e recompensas — perfeito para crianças.
+        </p>
+
+        <ul class="features">
+          <li>🧠 Aprender brincando (organização)</li>
+          <li>🎯 Missões rápidas com timer</li>
+          <li>🎵 Sons e efeitos visuais divertidos</li>
+        </ul>
+
+        <div class="hero-cta">
+          <a class="btn-primary" href="jogo.html">▶ Começar a Missão</a>
+          <button class="btn-secondary" id="how-btn">Como jogar</button>
+        </div>
+      </div>
+
+      <div class="hero-right" aria-hidden>
+        <!-- astronaut SVG (cartoon) -->
+        <svg viewBox="0 0 240 240" class="astronaut" role="img" aria-hidden>
+          <defs>
+            <linearGradient id="a1" x1="0" x2="1"><stop offset="0" stop-color="#FFD9F2"/><stop offset="1" stop-color="#B1F3FF"/></linearGradient>
+          </defs>
+          <circle cx="120" cy="120" r="90" fill="#0f3350" opacity="0.9"/>
+          <g transform="translate(60,40)">
+            <rect x="0" y="40" rx="18" ry="18" width="120" height="110" fill="#fff" stroke="#e6f7ff" stroke-width="2"/>
+            <circle cx="60" cy="20" r="28" fill="#0b2b3b"/>
+            <circle cx="60" cy="20" r="14" fill="#8be6ff"/>
+            <rect x="84" y="82" width="18" height="8" rx="4" fill="#ff8bd6"/>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <section class="cards" id="how">
+      <article class="card">
+        <h3>🎮 Como funciona</h3>
+        <p>Arraste os itens até os compartimentos corretos. Cada acerto dá energia — encha a barra e veja a nave decolar!</p>
+      </article>
+
+      <article class="card">
+        <h3>👧 Público</h3>
+        <p>Crianças de 4 a 10 anos — tela amigável, textos claros e cores alegres.</p>
+      </article>
+
+      <article class="card">
+        <h3>✨ Recursos</h3>
+        <p>Animações, sons, feedback imediato, timer e tela de vitória com foguete.</p>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <small>© Astrobagunça — Projeto educacional — Rafaela Cardoso</small>
+    </footer>
+  </main>
+
+<script src="starfield.js"></script>
+<script>
+  // small UX: scroll to how if button clicked
+  document.getElementById('how-btn').addEventListener('click', ()=> document.getElementById('how').scrollIntoView({behavior:'smooth'}));
+</script>
+</body>
+</html>
